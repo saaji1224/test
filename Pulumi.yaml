@@ -1,0 +1,29 @@
+name: aws-infrastructure
+runtime: nodejs
+description: Production-grade AWS Infrastructure with EKS
+
+config:
+  aws:region:
+    description: AWS region for deployment
+    default: us-east-1
+  environment:
+    description: Environment name (dev, staging, prod)
+    default: prod
+  vpc_cidr:
+    description: VPC CIDR block
+    default: 10.0.0.0/16
+  eks_version:
+    description: EKS cluster version
+    default: "1.29"
+  node_instance_types:
+    description: EC2 instance types for node groups
+    default: t3.xlarge
+  desired_capacity:
+    description: Desired number of nodes
+    default: 3
+  min_size:
+    description: Minimum number of nodes
+    default: 1
+  max_size:
+    description: Maximum number of nodes
+    default: 10
